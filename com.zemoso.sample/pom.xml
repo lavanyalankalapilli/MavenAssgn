@@ -20,61 +20,7 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
 	</dependencies>
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>dev</value>
-				</property>
-			</activation>
-			<properties>
-				<log.filename>dev-output.log</log.filename>
-			</properties>
-		</profile>
-		<profile>
-			<id>test</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>test</value>
-				</property>
-			</activation>
-			<properties>
-				<log.filename>test-output.log</log.filename>
-			</properties>
-		</profile>
-		<profile>
-			<id>prod</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>prod</value>
-				</property>
-			</activation>
-			<properties>
-				<log.filename>prod-output.log</log.filename>
-			</properties>
-		</profile>
-	</profiles>
-	<build>
-		<filters>
-			<filter>src/main/resources/log4j.properties</filter>
-		</filters>
-		<resources>
-			<resource>
-				<directory>src/main/resources/</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-	</build>
 	<modules>
 		<module>module1</module>
 		<module>module2</module>
